@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input,
+select {
+    margin-bottom: 10px;
+}
+
+.exe {
+    padding: 10px;
+    background-color: #f6f6f6;
+    border: 2px solid #f2f2f2;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: green;
+}
+
+nav li {
+    display: inline-block;
+    background-color: green;
+    padding: 15px 10px;
+    margin-bottom: 5px;
+
+}
+
+nav li:hover {
+    background-color: greenyellow;
+}
+
+ul.list-alpha {
+    list-style: lower-alpha;
+}
+
+ul.list-decimal {
+    list-style: decimal;
+}
+
+.alert,
+.warning,
+.free {
+    border-radius: 140px;
+    background-color: gray;
+    display: inline-block;
+    margin-right: 15px;
+    width: 60px;
+    height: 60px;
+}
+
+.alert.on {
+    background-color: red;
+}
+
+.warning.on {
+    background-color: orange;
+}
+
+.free.on {
+    background-color: green;
+}
+
+#botoes button {
+    margin-right: 10px;
+}
+
+textarea {
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    text-decoration: bold;
+    border-top: 1px solid #c2c2c2;
+    margin: 15px 0 20px;
+}
+
+header {
+    text-align: center;
+    margin: 25px 0 25px;
+    border-bottom: 2px solid #c2c2c2;
+    color: darkblue;
+}
+
+header img {
+    height: 150px;
+}

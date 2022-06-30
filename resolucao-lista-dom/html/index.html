@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Resolução de Exercícios LSW - Objeto DOM</title>
+    <script src="../script/exercicio1.js"></script>
+    <script src="../script/exercicio2.js"></script>
+    <script src="../script/exercicio3.js"></script>
+    <script src="../script/exercicio4.js"></script>
+    <script src="../script/exercicio5.js"></script>
+    <script src="../script/exercicio6.js"></script>
+    <script src="../script/exercicio7.js"></script>
+    <script src="../script/exercicio8.js"></script>
+    <script src="../script/exercicio9.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <img src="../files/logo-vertical-peq.png" />
+        <h1>LINGUAGEM DE SCRIPT PARA WEB - Resolução da <a target="_blank"
+                href="../files/Lista de Exercícios - DOM.pdf">Lista de
+                Exercícios</a></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#1">Exercício 1</a></li>
+            <li><a href="#2">Exercício 2</a></li>
+            <li><a href="#3">Exercício 3</a></li>
+            <li><a href="#4">Exercício 4</a></li>
+            <li><a href="#5">Exercício 5</a></li>
+            <li><a href="#6">Exercício 6</a></li>
+            <li><a href="#7">Exercício 7</a></li>
+            <li><a href="#8">Exercício 8</a></li>
+            <li><a href="#8">Exercício 9</a></li>
+        </ul>
+    </nav>
+    <section class="exe" id="1">
+        <p><strong>Exercício 1</strong> Crie um elemento input do tipo texto e um elemento label. Ao elemento input deve
+            ser
+            adicionado um evento denominado "onblur" (disparado quando o foco do elemento é retirado) que chame uma
+            função javascript que leia o valor contido no input e o coloque no elemento label.</p>
+        <div>
+            <h3>Resolução</h3>
+            <input type="text" name="campo1" onblur="addText(this);">
+            <label id="res-1">Aqui é um label</label>
+        </div>
+    </section>
+    <section class="exe" id="2">
+        <p><strong>Exercício 2</strong> Crie uma estrutura similar à do exercício anterior, isto é, um input com evento
+            onblur e um label. No
+            evento deve ser chamada um função javascript que acrescente à tag label o valor digitado, ou seja, haverá
+            concatenação dos valores apresentados em tela.</p>
+        <div>
+            <h3>Resolução</h3>
+            <input type="text" name="campo2" onblur="addText2(this);">
+            <label id="res-2"></label>
+        </div>
+    </section>
+    <section class="exe" id="3">
+        <p><strong>Exercício 3</strong> Faça o que se pede:
+        <ul class="list-alpha">
+            <li>Crie um elemento do tipo ComboBox (select) que conterá as opções: Escolha um estado; São Paulo;
+                Minas Gerais; Rio de Ganeiro e Espírito Santo.</li>
+            <li>Crie um novo ComboBox que conterá a opção: Escolha uma cidade. Este elemento deve receber,
+                inicialmente, o estilo display: none para que não seja exibido na página.</li>
+            <li>Crie uma função que vai ser disparada no evento onchange do primeiro ComboBox criado (estados).
+                Caso a opção escolhida seja diferente da correspondente a “Escolha um estado”, o ComboBox criado
+                no item b deve ser apresentado. Caso contrário, ele deve ser ocultado.</li>
+        </ul>
+        </p>
+        <div>
+            <h3>Resolução</h3>
+            <select onchange="loadCidade(this)">
+                <option value="">Escolha um estado:</option>
+                <option value="SP">São Paulo</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="ES">Espírito Santo</option>
+            </select>
+            <select id="cidades" name="cidades" style="display: none;">
+                <option value="Escolha uma cidade">Escolha uma cidade</option>
+            </select>
+        </div>
+    </section>
+    <section class="exe" id="4">
+        <p><strong>Exercício 4</strong> Partindo do mesmo princípio adotado no exercício 4, isto é, criar um ComboBox
+            para selecionar um estado e um ComboBox para Selecionar uma cidade, considere que agora, de acordo com o
+            estado escolhido,
+            deve ser apresentado no segundo ComboBox (de cidades) uma lista de cidades (pelo menos três)
+            referente a cada estado.
+        </p>
+        <div>
+            <h3>Resolução</h3>
+            <select onchange="loadCidades(this)">
+                <option value="">Escolha um estado:</option>
+                <option value="SP">São Paulo</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="ES">Espírito Santo</option>
+            </select>
+            <select id="cidades2" name="cidades2" style="display: none;">
+                <option value="Escolha uma cidade">Escolha uma cidade</option>
+            </select>
+        </div>
+    </section>
+    <section class="exe" id="5">
+        <p><strong>Exercício 5</strong> Faça três div´s com a propriedade CSS border-radius com valor elevado de modo
+            que elas fiquem com
+            aparência de um círculo. Cada div deve ter a cor de fundo cinza. A primeira div irá ter uma classe chamada
+            "alert", a segunda uma classe chamada "warning" e a terceira div uma classe chamada “free”. Cada div
+            irá disparar um evento onmouseover e um evento onmouseleave.
+        <ul class="list-alpha">
+            <li>O evento onmouseover deve chamar uma função denominada changeSemaphoreStyleOn de
+                modo que o evento disparado será tratado da seguinte forma:
+                <ul class="list-decimal">
+                    <li>Se for a div com a classe "alert", deve ser alterada a propriedade background-color
+                        do atributo style da div para "red".</li>
+                    <li>Se for a div com a classe "warning", deve ser alterada a propriedade backgroundcolor contida no
+                        atributo style da div para "orange".</li>
+                    <li>Se for a div com a classe "free", deve ser alterada a propriedade background-color
+                        contida no atributo style da div para “green”.</li>
+                </ul>
+            <li>O evento onmouseleave deve chamar uma função javascript denominada
+                changeSemaphoreStyleOff de modo que altere a propriedade background-color da div que
+                disparou o evento para "gray".</li>
+            </li>
+        </ul>
+        </p>
+        <div>
+            <h3>Resolução</h3>
+            <div class="alert" onmouseover="changeSemaphoreStyleOn(this)" onmouseleave="changeSemaphoreStyleOff(this)">
+            </div>
+            <div class="warning" onmouseover="changeSemaphoreStyleOn(this)"
+                onmouseleave="changeSemaphoreStyleOff(this)"></div>
+            <div class="free" onmouseover="changeSemaphoreStyleOn(this)" onmouseleave="changeSemaphoreStyleOff(this)">
+            </div>
+        </div>
+    </section>
+
+    <section class="exe" id="6">
+        <p><strong>Exercício 6</strong> Faça três div´s com a propriedade CSS border-radius com valor elevado de modo
+            que elas fiquem com
+            aparência de um círculo. Cada div deve ter a cor de fundo cinza. A primeira div irá ter uma classe chamada
+            “alert”, a segunda uma classe chamada “warning” e a terceira div uma classe chamada “free”. Cada div
+            irá disparar um evento onmouseover e um evento onmouseleave
+        <ul class="list-alpha">
+            <li>O evento onmouseover chamará uma função javascript changeSemaphore. Esta função
+                deve incluir na div que disparou o evento uma classe chamada on. Desta forma:
+                <ul class="list-decimal">
+                    <li>Se for a div “alert” quem disparou o evento, deve ser adicionada a classe on na div.
+                        Além disso, sua respectiva cor deve ser alterada para vermelho.</li>
+                    <li>Se for a div “warning” quem disparou o evento, deve ser adicionada a classe on à
+                        div e a sua cor deve ser alterada para amarelo.</li>
+                    <li>Se for a div “free” quem diparou o evento, deve ser adicioinada a classe on à div e a
+                        sua cor deve ser alterada para verde.</li>
+                </ul>
+            <li>O evento onmouseleave deve chamar a mesma função javascript changeSemaphore de tal
+                modo a remover a classe on da div que disparou o evento.</li>
+            </li>
+        </ul>
+        </p>
+        <div>
+            <h3>Resolução</h3>
+            <div class="alert" onmouseover="changeSemaphore(this, 'add')"
+                onmouseleave="changeSemaphore(this, 'remove')">
+            </div>
+            <div class="warning" onmouseover="changeSemaphore(this, 'add')"
+                onmouseleave="changeSemaphore(this, 'remove')"></div>
+            <div class="free" onmouseover="changeSemaphore(this, 'add')" onmouseleave="changeSemaphore(this, 'remove')">
+            </div>
+        </div>
+    </section>
+
+    <section class="exe" id="7">
+        <p><strong>Exercício 7 </strong>Faça um botão que contenha um evento onclick. Tal evento deve chamar uma função
+            javascript chamada
+            addButton. Desta forma, um novo botão deve ser acrescentado ao lado do botão anterior. Os botões
+            devem ser numerados, sendo assim, o primeiro botão se chamará “Botão 1”, o próximo “Botão 2” e assim
+            sucessivamente.
+            Observação: Para que os botões fiquem posicionados lado a lado, utilize uma lista com com a propriedade
+            CSS display com valor inline-block.
+        </p>
+        <div>
+            <h3>Resolução</h3>
+            <div id="botoes">
+                <button id="bt-1" onclick="addButton(this)">Botão 1</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="exe" id="8">
+        <p><strong>Exercício 8 </strong>Crie um botão chamado "Remove Button" que contenha um evento <i>onclick</i>.
+            Este evento deve chamar uma função javascript chamada <i>removeLastButton</i> que deverá remover o último
+            botão adicionado na lista de botões criada no Exercício 7. Caso reste apenas um botão, deve ser apresentada
+            uma mensagem a partir de um <i>alert</i> informando que é impossível remover tal botão, pois resta apenas
+            ele.
+        </p>
+        <div>
+            <h3>Resolução</h3>
+            <div>
+                <button id="remove" onclick="removeLastButton()">Remove Button</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="exe" id="9">
+        <p><strong>Exercício 9 </strong>Crie um input do tipo <i>text</i>, um botão e um textarea. Ao botão adicione um
+            evento <i>onclick</i> de modo que quando o evento for disparado será chamada a função <i>concatText</i>.
+            Esta função será responsável por ler o valor contido no input text e adicionar ao textArea sem apagar o
+            texto já existente. Não será permitido a inclusão de espaços ou de texto vazio (""), sendo que nestes cados
+            uma mensagem a partir de um <i>alert</i> deve ser emitida ao usuário informando que não é possível a
+            inserção de texto vazio.
+        </p>
+        <div>
+            <h3>Resolução</h3>
+            <div>
+                <input type="text" name="query" /><button onclick="concatText()">Add</button>
+                <br />
+                <textarea rows="10"></textarea>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Linguagem de Script para WEB - Professora Lídia Bononi (lidia@iftm.edu.br)</p>
+    </footer>
+</body>
+
+</html>
